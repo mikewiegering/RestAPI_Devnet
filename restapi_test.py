@@ -2,6 +2,8 @@
 
 import requests
 import json
+from getpass import getpass
+
 
 # insert your api key here for the location
 print('Enter your the City of where you want know the current weather.')
@@ -17,12 +19,12 @@ print('To whom would you like to send this weather information to? Enter their e
 whoto = input()
 
 print('enter you weather api key now.')
-weather_api_key = input()
+weather_api_key = getpass()
 
 print('enter your webex api key now.')
-webexapikey = input()
+webexapikey = getpass()
 
-wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&appid={weather_api_key}'
+wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&units=imperial&appid={weather_api_key}'
 
 payload = {}
 headers= {}
