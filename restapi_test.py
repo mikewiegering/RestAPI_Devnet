@@ -19,6 +19,9 @@ whoto = input()
 print('enter you weather api key now.')
 weather_api_key = input()
 
+print('enter your webex api key now.')
+webexapikey = input()
+
 wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&appid={weather_api_key}'
 
 payload = {}
@@ -39,7 +42,7 @@ payload = {
 }
 
 headers = {
-    'Authorization': 'Bearer Y2Q1ODI1NzItNDM5Zi00OTY3LWE4Y2ItN2I2OGJjNTM4MTAyMDFiYWM2M2EtYmU0_PF84_f88c9535-c5ce-4eb5-b166-be95180e4c32',
+    'Authorization': 'Bearer ' + webexapikey,
     'Content-Type': 'application/json'
 }
 
