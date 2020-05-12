@@ -16,7 +16,8 @@ state = input()
 print('To whom would you like to send this weather information to? Enter their email now.')
 whoto = input()
 
-weather_api_key = '497dea13dacd7892ebae54c630194ee2'
+print('enter you weather api key now.')
+weather_api_key = input()
 
 wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&appid={weather_api_key}'
 
