@@ -18,11 +18,9 @@ state = input()
 print('To whom would you like to send this weather information to? Enter their email now.')
 whoto = input()
 
-print('enter you weather api key now.')
-weather_api_key = getpass()
+weather_api_key = getpass('enter you weather api key now.')
 
-print('enter your webex api key now.')
-webexapikey = getpass()
+webexapikey = getpass('enter your webex api key now.')
 
 wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&units=imperial&appid={weather_api_key}'
 
@@ -34,7 +32,7 @@ response = requests.request("GET", wurl, headers=headers, data = payload)
 print(response.text.encode('utf8'))
 
 message_dict = response.json()
-message = json.dumps(message_dict)
+message = json.dumps(message_dict, indent= 4)
 
 
 
