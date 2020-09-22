@@ -3,6 +3,10 @@
 import requests
 import json
 from getpass import getpass
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
 
 
 # insert your api key here for the location
@@ -18,9 +22,9 @@ state = input()
 print('To whom would you like to send this weather information to? Enter their email now.')
 whoto = input()
 
-weather_api_key = getpass('enter you weather api key now.')
+weather_api_key = os.getenv('weather_api_key')
 
-webexapikey = getpass('enter your webex api key now.')
+webexapikey = os.getenv('webexapikey')
 
 wurl = f'https://api.openweathermap.org/data/2.5/weather?q={city_name},{state}&units=imperial&appid={weather_api_key}'
 
@@ -32,7 +36,7 @@ response = requests.request("GET", wurl, headers=headers, data = payload)
 print(response.text.encode('utf8'))
 
 message_dict = response.json()
-message = json.dumps(message_dict, indent= 4)
+message = json.dumps(message_dict.key(weather), indent= 4)
 
 
 
