@@ -36,7 +36,7 @@ response = requests.request("GET", wurl, headers=headers, data = payload)
 print(response.text.encode('utf8'))
 
 message_dict = response.json()
-message = json.dumps(message_dict.key(weather), indent= 4)
+message = json.dumps(message_dict, indent= 4)
 
 
 
